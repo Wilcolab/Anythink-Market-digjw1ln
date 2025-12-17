@@ -30,6 +30,9 @@ function calculate(operand1, operand2, operation) {
         case '*':
             uri += "?operation=multiply";
             break;
+        case '^':
+            uri += "?operation=pow";
+            break;
         case '/':
             uri += "?operation=divide";
             break;
@@ -138,7 +141,7 @@ document.addEventListener('keypress', (event) => {
         numberPressed(event.key);
     } else if (event.key == '.') {
         decimalPressed();
-    } else if (event.key.match(/^[-*+/]$/)) {
+    } else if (event.key.match(/^[-*+/^]$/)) {
         operationPressed(event.key);
     } else if (event.key == '=') {
         equalPressed();
